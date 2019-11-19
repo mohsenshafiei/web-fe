@@ -216,3 +216,35 @@ const { year, month, day} = result.groups;
 ```
 
 #### Relative Time Format
+#### Resize Observer
+- purpose: triggering a code when an element just resized.
+- implementation:
+```javascript
+const observer = new ResizeObserver((changes) => {
+  for (const {target, contentRect } of changes) {
+    // ...
+  }
+})
+observer.observe(element);
+```
+##### Audio Worklets
+```javascript
+// app.js
+const audioCtx = new AudioContext();
+await audioCtx.audioWorklets.addModule('a-node.js');
+const track = audioCtx.createMediaElementSource(audioElement);
+const aNode = new AudioWorkletNode(context, 'a-node');
+track.
+  .connect(sNode)
+  .connect(audioCtx.destination);
+
+```
+```javascript
+// a-node.js
+class ANode extends AudioWorkletProcessor {
+  process(inputs, outputs, parameters) {
+    // ...
+  }
+}
+registerProcessor('gain-processor', GainProcessor);
+```
