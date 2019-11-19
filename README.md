@@ -248,3 +248,22 @@ class ANode extends AudioWorkletProcessor {
 }
 registerProcessor('gain-processor', GainProcessor);
 ```
+##### Cache-Mode
+```javascript
+const response = await fetch(url, {
+  cache: 'reload',
+  // or 'default'
+  // or 'no-store'
+  // or 'no-cache'
+  // or 'force-cache'
+  // or 'only-if-cached'
+})
+```
+##### Class fields
+- *Note*: This is just a syntactic sugar
+```javascript
+class MyClass {
+  x = 4;
+  static y = 9;
+}
+```
